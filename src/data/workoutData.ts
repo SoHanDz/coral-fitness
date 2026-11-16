@@ -1,5 +1,5 @@
 export type DayKey = 'T2' | 'T3' | 'T4' | 'T5' | 'T6' | 'T7' | 'CN'
-export type DayType = 'strength' | 'walk_grocery' | 'walk' | 'rest'
+export type DayType = 'strength' | 'walk' | 'rest'
 
 export interface Exercise {
   id: string
@@ -211,8 +211,8 @@ export const schedule: Record<DayKey, DayPlan> = {
   T3: {
     key: 'T3',
     label: 'Thứ Ba',
-    title: 'Ngày 2: Đi Bộ & Đi Chợ Healthy',
-    type: 'walk_grocery',
+    title: 'Ngày 2: Đi Bộ',
+    type: 'walk',
     description: 'Đi bộ 20 phút',
   },
   T4: {
@@ -232,7 +232,7 @@ export const schedule: Record<DayKey, DayPlan> = {
     label: 'Thứ Năm',
     title: 'Ngày 4: Nghỉ Tích Cực',
     type: 'walk',
-    description: 'Đi bộ nhẹ nhàng 15–20 phút giãn cơ',
+    description: 'Đi bộ nhẹ nhàng 15-20 phút giãn cơ',
   },
   T6: {
     key: 'T6',
@@ -251,7 +251,7 @@ export const schedule: Record<DayKey, DayPlan> = {
     label: 'Thứ Bảy',
     title: 'Ngày 6: Nghỉ Ngơi Phục Hồi',
     type: 'rest',
-    description: 'Nghỉ ngơi hoàn toàn, uống đủ 2.5–3L nước',
+    description: 'Nghỉ ngơi hoàn toàn, uống đủ 2.5-3L nước',
   },
   CN: {
     key: 'CN',
@@ -266,15 +266,6 @@ export const schedule: Record<DayKey, DayPlan> = {
     ],
   },
 }
-
-export const groceryItems = [
-  'Bắp cải trắng',
-  'Dưa chuột (1kg)',
-  'Cà rốt',
-  'Trứng gà (1–2 vỉ)',
-  'Ức gà / Thịt nạc thăn',
-  'Đậu hũ trắng',
-]
 
 /** JS getDay(): 0=Sun..6=Sat → DayKey */
 export function todayKey(d = new Date()): DayKey {

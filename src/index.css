@@ -7,7 +7,7 @@
 body {
   background: #fafafa;
   color: #111827;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -25,4 +25,11 @@ button {
 }
 .animate-sheet {
   animation: sheet-up 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sheet,
+  .animate-pulse {
+    animation: none !important;
+  }
 }
